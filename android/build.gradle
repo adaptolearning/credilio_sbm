@@ -77,8 +77,9 @@ android {
     }
 }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
-}
+
+
+
+
 
 
