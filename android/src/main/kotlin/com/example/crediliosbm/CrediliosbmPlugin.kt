@@ -1,3 +1,5 @@
+package com.example.crediliosbm
+
 import androidx.annotation.NonNull
 import android.content.Context
 import android.content.Intent
@@ -35,10 +37,6 @@ class CrediliosbmPlugin : FlutterPlugin, MethodCallHandler {
         // Initialize the SDK
         PartnerLibrarySingleton.init("https://sbmsmartbankinguat.esbeeyem.com:9443")
         library = PartnerLibrarySingleton.instance
-
-        callback = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-          // Handle the result here
-        }
 
 
 

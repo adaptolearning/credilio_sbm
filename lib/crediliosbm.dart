@@ -1,8 +1,7 @@
-
 import 'crediliosbm_platform_interface.dart';
 
 class Crediliosbm {
-  Future<String?> getPlatformVersion() {
-    return CrediliosbmPlatform.instance.getPlatformVersion();
+  Future<void> openLibrary(String token, String email) {
+    return CrediliosbmPlatform.instance.openLibrary(token, email);
   }
 }
