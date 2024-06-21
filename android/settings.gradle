@@ -1,1 +1,2 @@
 rootProject.name = 'crediliosbm'
+include ':mylibrary'
