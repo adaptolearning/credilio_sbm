@@ -1,2 +1,11 @@
 rootProject.name = 'crediliosbm'
 include ':mylibrary'
+configurations.all {
+resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+    def requested = details.requested
+    if (requested.group == "androidx") {
+        if (!requested.name.startsWith("multidex")) {
+            details.useVersion "${targetSdk}.+"
+        }
+    }
+}}
