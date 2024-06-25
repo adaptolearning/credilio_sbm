@@ -4,27 +4,22 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import androidx.activity.ComponentActivity
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
-
 import androidx.annotation.NonNull
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
-import `in`.co.sbmbank.library.PartnerLibrary
-import `in`.co.sbmbank.library.PartnerLibrarySingleton
+import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
-import io.flutter.plugin.common.PluginRegistry
 
-class CrediliosbmPlugin : FlutterPlugin, MethodChannel.MethodCallHandler,
-  PluginRegistry.ActivityResultListener {
+class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallHandler{
 
   private lateinit var channel: MethodChannel
   private lateinit var context: Context
-  private lateinit var library: PartnerLibrary
-  private lateinit var callback: ActivityResultLauncher<Intent>
+
+
+  private var activity: FlutterActivity? = null
 
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
@@ -32,12 +27,9 @@ class CrediliosbmPlugin : FlutterPlugin, MethodChannel.MethodCallHandler,
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "crediliosbm")
     channel.setMethodCallHandler(this)
 
-    PartnerLibrarySingleton.init("https://sbmsmartbankinguat.esbeeyem.com:9443")
-    library = PartnerLibrarySingleton.instance
-
-
-
   }
+
+
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {
     when (call.method) {
@@ -46,7 +38,10 @@ class CrediliosbmPlugin : FlutterPlugin, MethodChannel.MethodCallHandler,
         Log.d("CrediliosbmPlugin", "Token received: $token")
 
         if (token != null) {
-          library.open(context, token, "/banking/sbm/credit_card/SCC/landing", callback)
+
+          val intent = Intent(context, SbmActivity::class.java)
+          intent.putExtra("Token", token)
+          activity?.startActivity(intent)
           result.success("Opening SDK activity for endpoint")
         } else {
           result.error("PARAMS_ERROR", "Token parameter missing", null)
@@ -56,20 +51,29 @@ class CrediliosbmPlugin : FlutterPlugin, MethodChannel.MethodCallHandler,
     }
   }
 
-  private fun handleSdkResult(resultCode: Int) {
-    // Handle SDK result if needed
-    // Example: Implement handling of SDK result callback
-    Log.d("CrediliosbmPlugin", "SDK Result: $resultCode")
-  }
+
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)
   }
 
-  override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
 
-    return  true;
+
+  override fun onAttachedToActivity(binding: ActivityPluginBinding) {
+    activity = binding.activity as FlutterActivity
+
   }
+
+  override fun onDetachedFromActivityForConfigChanges() {
+  }
+
+  override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
+  }
+
+  override fun onDetachedFromActivity() {
+  }
+
+
 
 
 }

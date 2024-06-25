@@ -1,3 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.example.crediliosbm">
+    package="com.example.crediliosbm">
+
+    <application
+        android:theme="@style/AppTheme"
+
+        >
+        <activity
+            android:name=".SbmActivity"
+            android:exported="false" />
+    </application>
+
 </manifest>

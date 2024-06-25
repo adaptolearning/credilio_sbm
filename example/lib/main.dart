@@ -33,9 +33,10 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _openLibrary() async {
     try {
-      await _crediliosbmPlugin.openLibrary('asdas', 'vikas2dx@gmail.com');
+      await _crediliosbmPlugin.openLibrary(
+          token: 'Your Token', email: 'Your email');
     } catch (e) {
-      print('Error: $e');
+      debugPrint('Error: $e');
     }
   }
 
