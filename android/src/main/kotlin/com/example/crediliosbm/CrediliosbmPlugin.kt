@@ -1,5 +1,6 @@
 package com.example.crediliosbm
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -14,8 +15,11 @@ import io.flutter.plugin.common.MethodChannel
 
 import `in`.co.sbmbank.library.PartnerLibrary
 import `in`.co.sbmbank.library.PartnerLibrarySingleton
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
+import io.flutter.plugin.common.PluginRegistry
 
-class CrediliosbmPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
+class CrediliosbmPlugin : FlutterPlugin, MethodChannel.MethodCallHandler,
+  PluginRegistry.ActivityResultListener {
 
   private lateinit var channel: MethodChannel
   private lateinit var context: Context
@@ -60,6 +64,11 @@ class CrediliosbmPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)
+  }
+
+  override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
+
+    return  true;
   }
 
 

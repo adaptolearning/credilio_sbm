@@ -1,11 +1,12 @@
 name: crediliosbm
 description: A new Flutter plugin project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/vikas2dx/credilio_sbm
+repository: https://github.com/vikas2dx/credilio_sbm
 
 environment:
-  sdk: '>=3.1.5 <4.0.0'
-  flutter: '>=3.3.0'
+  sdk: ">=3.1.5 <4.0.0"
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
