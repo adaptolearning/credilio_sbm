@@ -3,6 +3,7 @@ description: A new Flutter plugin project.
 version: 0.0.1
 homepage: https://github.com/vikas2dx/credilio_sbm
 repository: https://github.com/vikas2dx/credilio_sbm
+license: MIT
 
 environment:
   sdk: ">=3.1.5 <4.0.0"
