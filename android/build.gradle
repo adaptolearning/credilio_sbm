@@ -58,8 +58,7 @@ android {
     }
 
     dependencies {
-//        api project(':mylibrary')
-        implementation files('libs/sbm-library-android-release.aar')
+        implementation("money.spense:sbm-library-android:0.1.2")
         implementation("com.squareup.okhttp3:okhttp:4.11.0")
         implementation("com.github.franmontiel:PersistentCookieJar:v1.0.1")
         implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
