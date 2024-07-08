@@ -28,10 +28,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _crediliosbmPlugin = Crediliosbm();
-  final crediloToken =
-      "MzMw.gZDtG3Pt-qR-h7_lzMwc7QhKkasGevt3sIrm1vb325WF7rOvf64z4IW8PmM8";
-  final generateTokenUrl =
-      'https://d14-api.novio.co.in/customer/v1/spense/generate-token';
+  final crediloToken = "Your Token";
+  final generateTokenUrl = 'Your yourl';
 
   var params = {
     'email': 'vikas2dx@gmail.com',
