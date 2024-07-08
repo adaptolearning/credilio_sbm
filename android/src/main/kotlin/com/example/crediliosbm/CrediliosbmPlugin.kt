@@ -40,7 +40,7 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
         if (token != null) {
 
           val intent = Intent(context, SbmActivity::class.java)
-          intent.putExtra("Token", token)
+          intent.putExtra("token", token)
           activity?.startActivity(intent)
           result.success("Opening SDK activity for endpoint")
         } else {

@@ -23,11 +23,11 @@ class SbmActivity : ComponentActivity() {
             handleSdkResult(result.resultCode)
         }
 
-        val token = intent.getStringExtra("Token")
+        val token = intent.getStringExtra("token")
 
         // Use the token as needed
         if (token != null) {
-            library.open(applicationContext, "Token", "/banking/sbm/credit_card/SCC/landing", callback)
+            library.open(applicationContext, token, "/banking/sbm/credit_card/SCC/landing", callback)
         }
 
 
