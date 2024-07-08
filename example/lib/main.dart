@@ -29,7 +29,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _crediliosbmPlugin = Crediliosbm();
   final crediloToken = "Your Token";
-  final generateTokenUrl = 'Your yourl';
+  final generateTokenUrl = 'Your url';
 
   var params = {
     'email': 'vikas2dx@gmail.com',
