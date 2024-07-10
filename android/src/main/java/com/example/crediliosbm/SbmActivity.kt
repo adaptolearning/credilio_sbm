@@ -24,11 +24,19 @@ class SbmActivity : ComponentActivity() {
         }
 
         val token = intent.getStringExtra("token")
+        Log.d("SbmActivity", "Token SbmActivity: $token")
 
-        // Use the token as needed
+
         if (token != null) {
-            library.open(applicationContext, token, "/banking/sbm/credit_card/SCC/landing", callback)
+            try {
+                Log.d("SbmActivity", "SDK Invoke");
+                library.open(applicationContext, token, "/banking/sbm/credit_card/SCC/landing", callback);
+            } catch (e: Exception) {
+                Log.d("SbmActivity", "SDK invocation failed: ${e.message}", e)
+                e.printStackTrace(); // Optionally, print the stack trace for debugging
+            }
         }
+
 
 
     }
@@ -36,6 +44,6 @@ class SbmActivity : ComponentActivity() {
     private fun handleSdkResult(resultCode: Int) {
         // Handle SDK result if needed
         // Example: Implement handling of SDK result callback
-        Log.d("CrediliosbmPlugin", "SDK Result: $resultCode")
+        Log.d("SbmActivity", "SDK Result: $resultCode")
     }
 }
