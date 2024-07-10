@@ -13,11 +13,11 @@ public class CrediliosbmPlugin: NSObject, FlutterPlugin {
         case "openLibrary":
             if let arguments = call.arguments as? [String: Any],
                 let token = arguments["token"] as? String {
-                // let sbmViewController = SbmViewController()
-                // sbmViewController.token = token
+                 let sbmViewController = SbmViewController()
+                 sbmViewController.token = token
                 
                 if let viewController = UIApplication.shared.keyWindow?.rootViewController {
-                    // viewController.present(sbmViewController, animated: true, completion: nil)
+                     viewController.present(sbmViewController, animated: true, completion: nil)
                     result("Opening SDK screen for endpoint")
                 } else {
                     result(FlutterError(code: "VIEW_CONTROLLER_ERROR", message: "Unable to retrieve root view controller", details: nil))
