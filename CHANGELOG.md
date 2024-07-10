@@ -5,3 +5,7 @@
 # 0.0.3
 
 - Sbm Android Error Handle
+
+# 0.0.6
+
+- Error handle
