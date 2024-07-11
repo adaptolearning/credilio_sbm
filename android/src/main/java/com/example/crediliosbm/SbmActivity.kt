@@ -15,6 +15,8 @@ class SbmActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sbm)
+        Log.d("CrediliosbmPlugin", "In SbmActivity")
+
         PartnerLibrarySingleton.init("https://sbmsmartbankinguat.esbeeyem.com:9443")
         library = PartnerLibrarySingleton.instance
 
@@ -24,17 +26,20 @@ class SbmActivity : ComponentActivity() {
         }
 
         val token = intent.getStringExtra("token")
-        Log.d("SbmActivity", "Token SbmActivity: $token")
+        Log.d("CrediliosbmPlugin", "Token SbmActivity: $token")
 
 
         if (token != null) {
             try {
-                Log.d("SbmActivity", "SDK Invoke");
+                Log.d("CrediliosbmPlugin", "SDK Invoked");
                 library.open(applicationContext, token, "/banking/sbm/credit_card/SCC/landing", callback);
             } catch (e: Exception) {
-                Log.d("SbmActivity", "SDK invocation failed: ${e.message}", e)
+                Log.d("CrediliosbmPlugin", "SDK invocation failed: ${e.message}", e)
                 e.printStackTrace(); // Optionally, print the stack trace for debugging
             }
+        }else{
+            Log.d("CrediliosbmPlugin", "Token Not Found in SbmActivity");
+
         }
 
 
