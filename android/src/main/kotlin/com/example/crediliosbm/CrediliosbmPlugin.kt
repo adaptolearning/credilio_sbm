@@ -35,15 +35,17 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
     when (call.method) {
       "openLibrary" -> {
         val token = call.argument<String>("token")
-        Log.d("CrediliosbmPlugin", "Token received: $token")
+        Log.d("CrediliosbmPlugin", "Token received plugin: $token")
 
         if (token != null) {
 
           val intent = Intent(context, SbmActivity::class.java)
           intent.putExtra("token", token)
           activity?.startActivity(intent)
+          Log.d("CrediliosbmPlugin", "Sdk Invoking")
           result.success("Opening SDK activity for endpoint")
         } else {
+          Log.d("CrediliosbmPlugin", "Token missing")
           result.error("PARAMS_ERROR", "Token parameter missing", null)
         }
       }
