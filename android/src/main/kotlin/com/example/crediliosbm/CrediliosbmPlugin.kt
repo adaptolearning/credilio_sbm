@@ -73,12 +73,18 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
   }
 
   override fun onDetachedFromActivityForConfigChanges() {
+            channel.setMethodCallHandler(null)
+
   }
 
   override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
+            activity = binding.activity as FlutterActivity?
+
   }
 
   override fun onDetachedFromActivity() {
+            activity = null
+
   }
 
 
