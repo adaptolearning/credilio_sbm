@@ -39,11 +39,17 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
 
         if (token != null) {
 
-          val intent = Intent(context, SbmActivity::class.java)
-          intent.putExtra("token", token)
-          activity?.startActivity(intent)
-          Log.d("CrediliosbmPlugin", "Sdk Invoking")
-          result.success("Opening SDK activity for endpoint")
+          try {
+                val intent = Intent(activity, SbmActivity::class.java)
+                intent.putExtra("token", token)
+                activity?.startActivity(intent)
+                Log.d("CrediliosbmPlugin", "Sdk Invoking")
+                result.success("Opening SDK activity for endpoint")
+            } catch (e: Exception) {
+                Log.e("CrediliosbmPlugin", "Error starting SbmActivity: ${e.message}")
+                result.error("ACTIVITY_START_ERROR", "Error starting SbmActivity", null)
+            }
+
         } else {
           Log.d("CrediliosbmPlugin", "Token missing")
           result.error("PARAMS_ERROR", "Token parameter missing", null)
