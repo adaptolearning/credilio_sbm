@@ -14,9 +14,7 @@ class SbmViewController: UIViewController {
         if let token = token {
             print("Token received: \(token)")
             
-            // Example: Initialize and use PartnerLibrary or perform specific actions
-            PartnerLibrarySingleton.shared().init("https://sbmsmartbankinguat.esbeeyem.com:9443")
-            let library = PartnerLibrarySingleton.shared().instance()
+    
             
             // Example: Call SDK method using the token
             do {
