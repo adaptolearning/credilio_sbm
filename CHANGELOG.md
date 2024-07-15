@@ -9,3 +9,7 @@
 # 0.0.6
 
 - Error handle
+
+# 0.0.12
+
+- Change FlutterActivity to FlutterFragmentActivity
