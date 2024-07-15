@@ -29,7 +29,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _crediliosbmPlugin = Crediliosbm();
   final crediloToken =
-      "MzM1.wNTipaZYUQyskQlafhaPHXXJYXoyfaJvNjE-8vDgtDpa_2SrGIg96utNbXtT";
+      "MzU3.cwqgVntv9qHPGoWDtynTElG3YkGInYkWehby1lpnGaNFcpzqKz47vxOWk9_k";
   final generateTokenUrl =
       'https://d14-api.novio.co.in/customer/v1/spense/generate-token';
 
@@ -73,15 +73,6 @@ class _HomePageState extends State<HomePage> {
       } else {
         throw Exception('Failed to get token');
       }
-    } catch (e) {
-      debugPrint('Error: $e');
-    }
-  }
-
-  Future<void> _openLibrary() async {
-    try {
-      await _crediliosbmPlugin.openLibrary(
-          token: 'Your Token', email: 'Your email');
     } catch (e) {
       debugPrint('Error: $e');
     }

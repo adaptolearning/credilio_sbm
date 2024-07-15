@@ -9,7 +9,7 @@ import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 
@@ -19,7 +19,7 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
   private lateinit var context: Context
 
 
-  private var activity: FlutterActivity? = null
+  private var activity: FlutterFragmentActivity? = null
 
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
@@ -68,7 +68,7 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
 
 
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
-    activity = binding.activity as FlutterActivity
+    activity = binding.activity as FlutterFragmentActivity
 
   }
 
@@ -78,7 +78,7 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
   }
 
   override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-            activity = binding.activity as FlutterActivity?
+            activity = binding.activity as FlutterFragmentActivity?
 
   }
 
