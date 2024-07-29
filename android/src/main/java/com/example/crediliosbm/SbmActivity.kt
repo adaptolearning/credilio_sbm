@@ -32,7 +32,7 @@ class SbmActivity : ComponentActivity() {
         if (token != null) {
             try {
                 Log.d("CrediliosbmPlugin", "SDK Invoked");
-                library.open(applicationContext, token, "/banking/sbm/credit_card/SCC/landing", callback);
+                library.open(this, token, "/banking/sbm/credit_card/SCC/landing", callback);
             } catch (e: Exception) {
                 Log.d("CrediliosbmPlugin", "SDK invocation failed: ${e.message}", e)
                 e.printStackTrace(); // Optionally, print the stack trace for debugging
