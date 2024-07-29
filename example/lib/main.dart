@@ -29,7 +29,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _crediliosbmPlugin = Crediliosbm();
   final crediloToken =
-      "MzU3.cwqgVntv9qHPGoWDtynTElG3YkGInYkWehby1lpnGaNFcpzqKz47vxOWk9_k";
+      "NzA1.OlZgl3SPBVb6EU7tbVaLwOr_gOqYzFH1RkCGzSlsecZoji10TlNsevxViWoC";
   final generateTokenUrl =
       'https://d14-api.novio.co.in/customer/v1/spense/generate-token';
 
@@ -63,8 +63,12 @@ class _HomePageState extends State<HomePage> {
 
       if (response.statusCode == 200) {
         // Handle successful response here
-        var token =
-            response.data['token']; // Assuming token is returned in response
+        final data = response.data;
+
+        debugPrint('Response Data: $data');
+
+        // Extract the token from the response data
+        final token = data['data']['token']; // Correctly access nested 'token'
         debugPrint('Token: $token');
 
         // Now you can use the token with _crediliosbmPlugin.openLibrary()

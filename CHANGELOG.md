@@ -13,3 +13,7 @@
 # 0.0.12
 
 - Change FlutterActivity to FlutterFragmentActivity
+
+# 0.0.13
+
+- Token API response handle
