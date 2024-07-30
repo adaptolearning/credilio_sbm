@@ -21,3 +21,7 @@
 # 0.0.14
 
 - Context fix
+
+# 0.0.15
+
+- deviceBindingEnabled=false
