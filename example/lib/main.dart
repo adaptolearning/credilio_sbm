@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
       'https://d14-api.novio.co.in/customer/v1/spense/generate-token';
 
   var params = {
-    'email': 'vikas2dx@gmail.com',
+    'email': 'contact@credilio.in',
     'module_type': 'LANDING',
     'terms_and_condition': true
   };
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
 
         // Now you can use the token with _crediliosbmPlugin.openLibrary()
         await _crediliosbmPlugin.openLibrary(
-            token: token, email: 'vikas2dx@gmail.com');
+            token: token, email: 'contact@credilio.in');
       } else {
         throw Exception('Failed to get token');
       }

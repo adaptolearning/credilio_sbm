@@ -1,8 +1,8 @@
 name: crediliosbm
 description: Crediliom SBM sdk.
-version: 0.0.15
-homepage: https://github.com/vikas2dx/credilio_sbm
-repository: https://github.com/vikas2dx/credilio_sbm
+version: 0.0.16
+homepage: https://github.com/adaptolearning/credilio_sbm
+repository: https://github.com/adaptolearning/credilio_sbm
 license: MIT
 
 environment:
