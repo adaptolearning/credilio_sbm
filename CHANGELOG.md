@@ -25,3 +25,9 @@
 # 0.0.15
 
 - deviceBindingEnabled=false
+
+# 0.0.16
+
+- `implementation("money.spense:sbm-library-android:0.1.2")` updated to `implementation("money.spense:sbm-library-android:0.2.1")` in build.gradle.
+- `HomePage`, and `Repository` URL updated to the latest.
+- Test email id updated for sample.
