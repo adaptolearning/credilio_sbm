@@ -17,7 +17,7 @@ class SbmActivity : ComponentActivity() {
         setContentView(R.layout.activity_sbm)
         Log.d("CrediliosbmPlugin", "In SbmActivity")
 
-        PartnerLibrarySingleton.init("https://sbmsmartbankinguat.esbeeyem.com:9443", deviceBindingEnabled = false,whitelistedUrls = arrayOf("api.razorpay.com"))
+        PartnerLibrarySingleton.init("https://sbmsmartbankinguat.esbeeyem.com:9443", deviceBindingEnabled = false,whitelistedUrls = arrayOf("razorpay.com"))
         library = PartnerLibrarySingleton.instance
 
         // Initialize the ActivityResultLauncher

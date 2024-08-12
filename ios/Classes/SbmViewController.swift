@@ -18,7 +18,7 @@ class SbmViewController: UIViewController {
             
             // Example: Call SDK method using the token
             do {
-                try library.open(token: token, path: "/banking/sbm/credit_card/SCC/landing") { resultCode in
+                try library.open(token: token, path: "/banking/sbm/credit_card/CRE/landing") { resultCode in
                     // Handle SDK result if needed
                     print("SDK Result: \(resultCode)")
                 }
