@@ -17,7 +17,7 @@ class SbmActivity : ComponentActivity() {
         setContentView(R.layout.activity_sbm)
         Log.d("CrediliosbmPlugin", "In SbmActivity")
 
-        PartnerLibrarySingleton.init("https://sbmsmartbankinguat.esbeeyem.com:9443", deviceBindingEnabled = false)
+        PartnerLibrarySingleton.init("https://sbmsmartbankinguat.esbeeyem.com:9443", deviceBindingEnabled = false,whitelistedUrls = arrayOf("api.razorpay.com"))
         library = PartnerLibrarySingleton.instance
 
         // Initialize the ActivityResultLauncher
@@ -32,7 +32,7 @@ class SbmActivity : ComponentActivity() {
         if (token != null) {
             try {
                 Log.d("CrediliosbmPlugin", "SDK Invoked");
-                library.open(this, token, "/banking/sbm/credit_card/SCC/landing", callback);
+                library.open(this, token, "/banking/sbm/credit_card/CRE/landing", callback);
             } catch (e: Exception) {
                 Log.d("CrediliosbmPlugin", "SDK invocation failed: ${e.message}", e)
                 e.printStackTrace(); // Optionally, print the stack trace for debugging
