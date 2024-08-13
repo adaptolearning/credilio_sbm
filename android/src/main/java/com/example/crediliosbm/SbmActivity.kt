@@ -26,13 +26,15 @@ class SbmActivity : ComponentActivity() {
         }
 
         val token = intent.getStringExtra("token")
+        val url = intent.getStringExtra("url")
         Log.d("CrediliosbmPlugin", "Token SbmActivity: $token")
+        Log.d("CrediliosbmPlugin", "url SbmActivity: $url")
 
 
-        if (token != null) {
+        if (token != null && url != null) {
             try {
                 Log.d("CrediliosbmPlugin", "SDK Invoked");
-                library.open(this, token, "/banking/sbm/credit_card/CRE/landing", callback);
+                library.open(this, token, url, callback);
             } catch (e: Exception) {
                 Log.d("CrediliosbmPlugin", "SDK invocation failed: ${e.message}", e)
                 e.printStackTrace(); // Optionally, print the stack trace for debugging
