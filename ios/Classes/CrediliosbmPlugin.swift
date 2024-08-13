@@ -12,9 +12,11 @@ public class CrediliosbmPlugin: NSObject, FlutterPlugin {
         switch call.method {
         case "openLibrary":
             if let arguments = call.arguments as? [String: Any],
-                let token = arguments["token"] as? String {
+                let token = arguments["token"] as? String, 
+                let url = arguments["url"] as? String {
                  let sbmViewController = SbmViewController()
                  sbmViewController.token = token
+                 sbmViewController.url = url
                 
                 if let viewController = UIApplication.shared.keyWindow?.rootViewController {
                      viewController.present(sbmViewController, animated: true, completion: nil)
@@ -23,7 +25,7 @@ public class CrediliosbmPlugin: NSObject, FlutterPlugin {
                     result(FlutterError(code: "VIEW_CONTROLLER_ERROR", message: "Unable to retrieve root view controller", details: nil))
                 }               
             } else {
-                result(FlutterError(code: "PARAMS_ERROR", message: "Token parameter missing", details: nil))
+                result(FlutterError(code: "PARAMS_ERROR", message: "Token or Url parameter missing", details: nil))
             }
         default:
             result(FlutterMethodNotImplemented)

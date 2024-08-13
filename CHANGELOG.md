@@ -34,3 +34,6 @@
 
 # 0.0.17
 - To make navigation dynamic, introducing `url` param and replacing hardcoded `url/moduleType`.
+
+# 0.0.18
+- Updated missing `interfaces` and `iOS` implementation with example code.
