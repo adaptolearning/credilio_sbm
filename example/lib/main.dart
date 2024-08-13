@@ -69,13 +69,18 @@ class _HomePageState extends State<HomePage> {
 
         // Extract the token from the response data
         final token = data['data']['token']; // Correctly access nested 'token'
+        final url = data['data']['url']; // Correctly access dynamic 'url'
         debugPrint('Token: $token');
+        debugPrint('Url: $url');
 
         // Now you can use the token with _crediliosbmPlugin.openLibrary()
         await _crediliosbmPlugin.openLibrary(
-            token: token, email: 'contact@credilio.in');
+          token: token,
+          email: 'contact@credilio.in',
+          url: url,
+        );
       } else {
-        throw Exception('Failed to get token');
+        throw Exception('Failed to get token or url');
       }
     } catch (e) {
       debugPrint('Error: $e');

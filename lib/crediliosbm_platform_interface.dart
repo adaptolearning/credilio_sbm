@@ -23,7 +23,11 @@ abstract class CrediliosbmPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> openLibrary({required String token, required String email}) {
+  Future<void> openLibrary({
+    required String token,
+    required String email,
+    required String url,
+  }) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }

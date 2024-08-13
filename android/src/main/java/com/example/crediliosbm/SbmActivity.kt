@@ -41,7 +41,6 @@ class SbmActivity : ComponentActivity() {
             }
         }else{
             Log.d("CrediliosbmPlugin", "Token Not Found in SbmActivity");
-
         }
 
 

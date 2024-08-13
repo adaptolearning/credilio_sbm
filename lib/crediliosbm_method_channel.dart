@@ -10,10 +10,17 @@ class MethodChannelCrediliosbm extends CrediliosbmPlatform {
   final methodChannel = const MethodChannel('crediliosbm');
 
   @override
-  Future<void> openLibrary({required token, required String email}) async {
+  Future<void> openLibrary({
+    required token,
+    required String email,
+    required String url,
+  }) async {
     try {
-      await methodChannel
-          .invokeMethod('openLibrary', {'token': token, 'email': email});
+      await methodChannel.invokeMethod('openLibrary', {
+        'token': token,
+        'email': email,
+        'url': url,
+      });
     } on PlatformException catch (e) {
       debugPrint('Error: ${e.message}');
     }

@@ -90,7 +90,4 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
 
   }
 
-
-
-
 }
