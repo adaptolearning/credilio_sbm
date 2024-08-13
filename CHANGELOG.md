@@ -31,3 +31,6 @@
 - `implementation("money.spense:sbm-library-android:0.1.2")` updated to `implementation("money.spense:sbm-library-android:0.2.3")` in build.gradle.
 - `HomePage`, and `Repository` URL updated to the latest.
 - Test email id updated for sample.
+
+# 0.0.17
+- To make navigation dynamic, introducing `url` param and replacing hardcoded `url/moduleType`.
