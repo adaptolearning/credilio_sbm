@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
 // import SbmViewController
-public class CrediliosbmPlugin: NSObject, FlutterPlugin {
+public class CredilioSbmPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "crediliosbm", binaryMessenger: registrar.messenger())
-        let instance = CrediliosbmPlugin()
+        let channel = FlutterMethodChannel(name: "credilio_sbm", binaryMessenger: registrar.messenger())
+        let instance = CredilioSbmPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
 

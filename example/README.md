@@ -1,6 +1,6 @@
-# crediliosbm_example
+# credilio_sbm_example
 
-Demonstrates how to use the crediliosbm plugin.
+Demonstrates how to use the credilio_sbm plugin.
 
 ## Getting Started
 

@@ -1,11 +1,12 @@
-rootProject.name = 'crediliosbm'
+rootProject.name = 'credilio_sbm'
 include ':mylibrary'
 configurations.all {
-resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-    def requested = details.requested
-    if (requested.group == "androidx") {
-        if (!requested.name.startsWith("multidex")) {
-            details.useVersion "${targetSdk}.+"
+    resolutionStrategy.eachDependency { details ->
+        def requested = details.requested
+        if (requested.group == "androidx") {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion "${targetSdk}.+"
+            }
         }
     }
-}}
+}
