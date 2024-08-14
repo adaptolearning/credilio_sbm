@@ -1,4 +1,4 @@
-package com.example.crediliosbm
+package com.example.credilio_sbm
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,7 +15,7 @@ class SbmActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sbm)
-        Log.d("CrediliosbmPlugin", "In SbmActivity")
+        Log.d("CredilioSbmPlugin", "In SbmActivity")
 
         PartnerLibrarySingleton.init("https://sbmsmartbankinguat.esbeeyem.com:9443", deviceBindingEnabled = false,whitelistedUrls = arrayOf("razorpay.com"))
         library = PartnerLibrarySingleton.instance
@@ -27,20 +27,20 @@ class SbmActivity : ComponentActivity() {
 
         val token = intent.getStringExtra("token")
         val url = intent.getStringExtra("url")
-        Log.d("CrediliosbmPlugin", "Token SbmActivity: $token")
-        Log.d("CrediliosbmPlugin", "url SbmActivity: $url")
+        Log.d("CredilioSbmPlugin", "Token SbmActivity: $token")
+        Log.d("CredilioSbmPlugin", "url SbmActivity: $url")
 
 
         if (token != null && url != null) {
             try {
-                Log.d("CrediliosbmPlugin", "SDK Invoked");
+                Log.d("CredilioSbmPlugin", "SDK Invoked");
                 library.open(this, token, url, callback);
             } catch (e: Exception) {
-                Log.d("CrediliosbmPlugin", "SDK invocation failed: ${e.message}", e)
+                Log.d("CredilioSbmPlugin", "SDK invocation failed: ${e.message}", e)
                 e.printStackTrace(); // Optionally, print the stack trace for debugging
             }
         }else{
-            Log.d("CrediliosbmPlugin", "Token Not Found in SbmActivity");
+            Log.d("CredilioSbmPlugin", "Token Not Found in SbmActivity");
         }
 
 

@@ -37,3 +37,6 @@
 
 # 0.0.18
 - Updated missing `interfaces` and `iOS` implementation with example code.
+
+# 0.0.19
+- Package Naming Convention Standardized.

@@ -1,4 +1,4 @@
-package com.example.crediliosbm
+package com.example.credilio_sbm
 
 import android.app.Activity
 import android.content.Context
@@ -13,7 +13,7 @@ import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 
-class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallHandler{
+class CredilioSbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallHandler{
 
   private lateinit var channel: MethodChannel
   private lateinit var context: Context
@@ -24,7 +24,7 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     context = flutterPluginBinding.applicationContext
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "crediliosbm")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "credilio_sbm")
     channel.setMethodCallHandler(this)
 
   }
@@ -36,8 +36,8 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
       "openLibrary" -> {
         val token = call.argument<String>("token")
         val url = call.argument<String>("url")
-        Log.d("CrediliosbmPlugin", "Token received plugin: $token")
-        Log.d("CrediliosbmPlugin", "URL received plugin: $url")
+        Log.d("CredilioSbmPlugin", "Token received plugin: $token")
+        Log.d("CredilioSbmPlugin", "URL received plugin: $url")
 
         if (token != null && url != null) {
 
@@ -46,15 +46,15 @@ class CrediliosbmPlugin : FlutterPlugin,ActivityAware, MethodChannel.MethodCallH
                 intent.putExtra("token", token)
                 intent.putExtra("url", url)
                 activity?.startActivity(intent)
-                Log.d("CrediliosbmPlugin", "Sdk Invoking")
+                Log.d("CredilioSbmPlugin", "Sdk Invoking")
                 result.success("Opening SDK activity for endpoint")
             } catch (e: Exception) {
-                Log.e("CrediliosbmPlugin", "Error starting SbmActivity: ${e.message}")
+                Log.e("CredilioSbmPlugin", "Error starting SbmActivity: ${e.message}")
                 result.error("ACTIVITY_START_ERROR", "Error starting SbmActivity", null)
             }
 
         } else {
-          Log.d("CrediliosbmPlugin", "Token or Url missing")
+          Log.d("CredilioSbmPlugin", "Token or Url missing")
           result.error("PARAMS_ERROR", "Token or Url parameter missing", null)
         }
       }

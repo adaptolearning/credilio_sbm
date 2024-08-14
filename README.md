@@ -1,4 +1,4 @@
-# crediliosbm
+# credilio_sbm
 
 A new Flutter plugin project.
 

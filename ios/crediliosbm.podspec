@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint crediliosbm.podspec` to validate before publishing.
+# Run `pod lib lint credilio_sbm.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'crediliosbm'
+  s.name             = 'credilio_sbm'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter plugin project.'
   s.description      = <<-DESC

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:crediliosbm/crediliosbm.dart';
+import 'package:credilio_sbm/credilio_sbm.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -27,8 +27,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _crediliosbmPlugin = Crediliosbm();
-  final crediloToken =
+  final _credilioSbmPlugin = CredilioSbm();
+  final credilioToken =
       "NzQ3.TxqnQ6gqBWBzG9BJlgW3yKDh5dI_8TVvPd1MjbT4Yt1mClxXzczLYJn9t1EZ";
   final generateTokenUrl =
       'https://d14-api.novio.co.in/customer/v1/spense/generate-token';
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
           headers: {
             'Content-Type': 'application/json',
             'Authorization':
-                'Bearer $crediloToken', // Replace YourTokenHere with actual token
+                'Bearer $credilioToken', // Replace YourTokenHere with actual token
           },
         ),
       );
@@ -73,8 +73,8 @@ class _HomePageState extends State<HomePage> {
         debugPrint('Token: $token');
         debugPrint('Url: $url');
 
-        // Now you can use the token with _crediliosbmPlugin.openLibrary()
-        await _crediliosbmPlugin.openLibrary(
+        // Now you can use the token with _credilioSbmPlugin.openLibrary()
+        await _credilioSbmPlugin.openLibrary(
           token: token,
           email: 'contact@credilio.in',
           url: url,

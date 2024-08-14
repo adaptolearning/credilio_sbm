@@ -1,4 +1,4 @@
-package com.example.crediliosbm_example
+package com.example.credilio_sbm_example
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

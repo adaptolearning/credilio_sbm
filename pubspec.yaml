@@ -1,6 +1,6 @@
-name: crediliosbm
-description: Crediliom SBM sdk.
-version: 0.0.18
+name: credilio_sbm
+description: Credilio SBM Sdk.
+version: 0.0.19
 homepage: https://github.com/adaptolearning/credilio_sbm
 repository: https://github.com/adaptolearning/credilio_sbm
 license: MIT
@@ -37,10 +37,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.crediliosbm
-        pluginClass: CrediliosbmPlugin
+        package: com.example.credilio_sbm
+        pluginClass: CredilioSbmPlugin
       ios:
-        pluginClass: CrediliosbmPlugin
+        pluginClass: CredilioSbmPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
