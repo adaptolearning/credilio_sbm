@@ -3,6 +3,7 @@ import UIKit
 class SbmViewController: UIViewController {
 
     var token: String?
+    var url: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,12 +14,13 @@ class SbmViewController: UIViewController {
         // Example: Handle token if received
         if let token = token {
             print("Token received: \(token)")
+            print("URL received: \(url)")
             
     
             
             // Example: Call SDK method using the token
             do {
-                try library.open(token: token, path: "/banking/sbm/credit_card/CRE/landing") { resultCode in
+                try library.open(token: token, path: url) { resultCode in
                     // Handle SDK result if needed
                     print("SDK Result: \(resultCode)")
                 }

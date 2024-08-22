@@ -47,3 +47,6 @@
 # 0.0.21
 - `credilio_sbm.podspec` changed to `crediliosbm.podspec`
 -  `s.name = 'credilio_sbm` changed to `s.name = 'credilio_sbm`
+
+# 0.0.22
+- Missing `URL` param adding in iOS implementation.
