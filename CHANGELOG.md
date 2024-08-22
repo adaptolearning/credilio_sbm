@@ -40,3 +40,6 @@
 
 # 0.0.19
 - Package Naming Convention Standardized.
+
+# 0.0.20
+- `crediliosbm.podspec` changed to `credilio_sbm.podspec`
