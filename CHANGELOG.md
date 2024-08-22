@@ -43,3 +43,7 @@
 
 # 0.0.20
 - `crediliosbm.podspec` changed to `credilio_sbm.podspec`
+
+# 0.0.21
+- `credilio_sbm.podspec` changed to `crediliosbm.podspec`
+-  `s.name = 'credilio_sbm` changed to `s.name = 'credilio_sbm`
