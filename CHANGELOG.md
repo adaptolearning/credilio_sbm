@@ -50,3 +50,6 @@
 
 # 0.0.22
 - Missing `URL` param adding in iOS implementation.
+
+# 0.0.23
+- Bug Fixes in iOS Module
