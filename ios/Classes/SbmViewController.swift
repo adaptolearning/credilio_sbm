@@ -9,7 +9,7 @@ class SbmViewController: UIViewController {
         super.viewDidLoad()
 
         // Set up UI
-        view.backgroundColor = .white
+        // view.backgroundColor = .white
 
         // Example: Handle token if received
         if let token = token {
@@ -19,15 +19,15 @@ class SbmViewController: UIViewController {
     
             
             // Example: Call SDK method using the token
-            do {
-                try library.open(token: token, path: url) { resultCode in
-                    // Handle SDK result if needed
-                    print("SDK Result: \(resultCode)")
-                }
-            } catch {
-                print("SDK invocation failed: \(error.localizedDescription)")
-                // Optionally, handle error gracefully
-            }
+            // do {
+            //     try library.open(token: token, path: url) { resultCode in
+            //         // Handle SDK result if needed
+            //         print("SDK Result: \(resultCode)")
+            //     }
+            // } catch {
+            //     print("SDK invocation failed: \(error.localizedDescription)")
+            //     // Optionally, handle error gracefully
+            // }
         }
     }
 
