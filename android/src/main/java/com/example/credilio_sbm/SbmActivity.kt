@@ -16,7 +16,7 @@ class SbmActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sbm)
+//        setContentView(R.layout.activity_sbm)
         Log.d("CredilioSbmPlugin", "In SbmActivity")
 
         PartnerLibrarySingleton.init("https://sbmsmartbankinguat.esbeeyem.com:9443", deviceBindingEnabled = false, whitelistedUrls = arrayOf("razorpay.com"))
