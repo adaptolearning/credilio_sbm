@@ -31,10 +31,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    if (project.android.hasProperty("namespace")) {
-        namespace 'com.example.credilio_sbm'
-    }
-
+    namespace 'com.example.credilio_sbm'
     compileSdkVersion 34
 
     compileOptions {
