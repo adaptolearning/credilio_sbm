@@ -35,14 +35,14 @@ class CredilioSbmPlugin : FlutterPlugin, ActivityAware, MethodChannel.MethodCall
                 if (token != null && url != null) {
                     try {
                         pendingResult = result
-                        val intent = Intent(activity, Class.forName("com.example.credilio_sbm.SbmActivity"))
+                        val intent = Intent(activity, SbmActivity::class.java)
                         intent.putExtra("token", token)
                         intent.putExtra("url", url)
                         activity?.startActivityForResult(intent, SBM_ACTIVITY_REQUEST_CODE)
                         Log.d("CredilioSbmPlugin", "Sdk Invoking")
                     } catch (e: Exception) {
                         Log.e("CredilioSbmPlugin", "Error starting SbmActivity: ${e.message}")
-                        result.error("ACTIVITY_START_ERROR", "Error starting SbmActivity: ${e.message}", null)
+                        result.error("ACTIVITY_START_ERROR", "Error starting SbmActivity", null)
                     }
                 } else {
                     Log.d("CredilioSbmPlugin", "Token or Url missing")
@@ -58,16 +58,16 @@ class CredilioSbmPlugin : FlutterPlugin, ActivityAware, MethodChannel.MethodCall
     }
 
     override fun onAttachedToActivity(binding: ActivityPluginBinding) {
-        activity = binding.activity as? FlutterFragmentActivity
+        activity = binding.activity as FlutterFragmentActivity
         binding.addActivityResultListener(this)
     }
 
     override fun onDetachedFromActivityForConfigChanges() {
-        activity = null
+        channel.setMethodCallHandler(null)
     }
 
     override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-        activity = binding.activity as? FlutterFragmentActivity
+        activity = binding.activity as FlutterFragmentActivity?
         binding.addActivityResultListener(this)
     }
 
