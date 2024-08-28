@@ -1,4 +1,4 @@
-import com.example.credilio_sbm
+package com.example.credilio_sbm
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
