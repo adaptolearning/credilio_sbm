@@ -7,6 +7,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import `in`.co.sbmbank.library.PartnerLibrary
 import `in`.co.sbmbank.library.PartnerLibrarySingleton
+import com.example.credilio_sbm.R
 
 class SbmActivity : ComponentActivity() {
 
@@ -15,7 +16,7 @@ class SbmActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sbm)
+        setContentView(R.layout.activity_sbm) // Ensure activity_sbm.xml exists in res/layout
 
         Log.d("CredilioSbmPlugin", "In SbmActivity")
 
