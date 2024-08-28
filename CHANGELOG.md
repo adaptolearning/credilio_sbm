@@ -53,3 +53,6 @@
 
 # 0.0.23
 - Bug Fixes in iOS Module
+
+# 0.0.24
+- Updated Android Module to record return result.
