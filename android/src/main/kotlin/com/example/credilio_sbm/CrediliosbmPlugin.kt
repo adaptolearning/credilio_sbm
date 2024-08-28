@@ -35,7 +35,7 @@ class CredilioSbmPlugin : FlutterPlugin, ActivityAware, MethodChannel.MethodCall
                 if (token != null && url != null) {
                     try {
                         pendingResult = result
-                        val intent = Intent(activity, SbmActivity::class.java)
+                        val intent = Intent(activity, Class.forName("com.example.credilio_sbm.SbmActivity"))
                         intent.putExtra("token", token)
                         intent.putExtra("url", url)
                         activity?.startActivityForResult(intent, SBM_ACTIVITY_REQUEST_CODE)
