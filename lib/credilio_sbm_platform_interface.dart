@@ -23,7 +23,7 @@ abstract class CredilioSbmPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> openLibrary({
+  Future<String> openLibrary({
     required String token,
     required String url,
   }) {

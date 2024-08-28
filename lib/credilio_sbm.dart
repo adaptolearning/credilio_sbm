@@ -1,7 +1,7 @@
 import 'credilio_sbm_platform_interface.dart';
 
 class CredilioSbm {
-  Future<void> openLibrary(
+  Future<String> openLibrary(
       {required token, required String url}) {
     return CredilioSbmPlatform.instance.openLibrary(
       token: token,

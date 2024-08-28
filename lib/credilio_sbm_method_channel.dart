@@ -10,7 +10,7 @@ class MethodChannelCredilioSbm extends CredilioSbmPlatform {
   final methodChannel = const MethodChannel('credilio_sbm');
 
   @override
-  Future<void> openLibrary({
+  Future<String> openLibrary({
     required token,
     required String url,
   }) async {
@@ -20,8 +20,10 @@ class MethodChannelCredilioSbm extends CredilioSbmPlatform {
         'url': url,
       });
       debugPrint('SDK operation result: $result');
+      return result;
     } on PlatformException catch (e) {
       debugPrint('Error: ${e.message}');
+      return 'Error: ${e.message}';
     }
   }
 }
