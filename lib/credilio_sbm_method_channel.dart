@@ -12,15 +12,14 @@ class MethodChannelCredilioSbm extends CredilioSbmPlatform {
   @override
   Future<void> openLibrary({
     required token,
-    required String email,
     required String url,
   }) async {
     try {
-      await methodChannel.invokeMethod('openLibrary', {
+      final result = await methodChannel.invokeMethod('openLibrary', {
         'token': token,
-        'email': email,
         'url': url,
       });
+      debugPrint('SDK operation result: $result');
     } on PlatformException catch (e) {
       debugPrint('Error: ${e.message}');
     }
