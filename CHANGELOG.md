@@ -56,3 +56,6 @@
 
 # 0.0.24
 - Updated Android Module to record return result.
+
+# 0.0.25
+- small bug fix
